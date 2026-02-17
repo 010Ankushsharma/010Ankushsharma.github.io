@@ -2,14 +2,204 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Ankush Sharma | ML Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1e293b;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: #f1f5f9;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 10%;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            color: #38bdf8;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .skills, .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e293b;
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #94a3b8;
+        }
+
+        @media(max-width:768px){
+            header {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Your visible content goes here -->
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph of text.</p>
+<header>
+    <h1>Ankush Sharma</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Machine Learning Engineer & Developer</h2>
+    <p>Passionate about AI, Backend Development, and solving real-world problems using data.</p>
+    <a href="#projects" class="btn">View Projects</a>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a Machine Learning enthusiast with strong foundations in Data Structures, Core Java,
+        SQL, and AI-driven systems. I focus on building intelligent and scalable applications.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="card">
+            <h3>Programming</h3>
+            <p>Java, Python, SQL</p>
+        </div>
+
+        <div class="card">
+            <h3>Machine Learning</h3>
+            <p>Regression, Random Forest, SVM, Model Evaluation</p>
+        </div>
+
+        <div class="card">
+            <h3>Backend</h3>
+            <p>Spring Boot, REST APIs, MySQL</p>
+        </div>
+
+        <div class="card">
+            <h3>Tools</h3>
+            <p>Pandas, NumPy, Matplotlib, Scikit-learn</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+
+        <div class="card">
+            <h3>Early Crop Disease Detection</h3>
+            <p>Built CNN model to detect crop diseases using image classification techniques.</p>
+        </div>
+
+        <div class="card">
+            <h3>Our Little Space</h3>
+            <p>Machine learning-based intelligent system with full EDA and feature engineering.</p>
+        </div>
+
+        <div class="card">
+            <h3>Cafe Management App</h3>
+            <p>Spring Boot backend with REST APIs and MySQL database integration.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your-email@example.com</p>
+    <p>GitHub: github.com/yourusername</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+</section>
+
+<footer>
+    <p>© 2026 Ankush Sharma | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>

@@ -463,6 +463,66 @@ strong { color: var(--white); font-weight: 500; }
 }
 .btn-ghost-full:hover { border-color: var(--border-light); color: var(--white); }
 
+/* ── GitHub divider ── */
+.gh-divider {
+  display: flex; align-items: center; gap: 1.5rem;
+  margin: 3.5rem 0 0;
+}
+.gh-divider::before, .gh-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.gh-divider-label {
+  font-family: var(--f-mono); font-size: 0.65rem;
+  color: var(--grey4); letter-spacing: 0.2em; text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── GitHub repo list ── */
+.gh-proj-list { border-top: none; }
+.gh-proj-list .proj-row { opacity: 0; animation: gh-fade-in 0.5s var(--ease) forwards; }
+@keyframes gh-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Loading dots ── */
+.gh-loading {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 2.5rem 0; color: var(--grey4);
+  font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.1em;
+}
+.gh-loading p { color: var(--grey4); }
+.gh-loading-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--grey4);
+  animation: dot-pulse 1.2s ease-in-out infinite;
+}
+.gh-loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.gh-loading-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dot-pulse {
+  0%,80%,100% { opacity: 0.3; transform: scale(0.8); }
+  40%          { opacity: 1;   transform: scale(1.2); }
+}
+
+/* ── GitHub repo tags — language badge ── */
+.pr-lang {
+  font-family: var(--f-mono); font-size: 0.62rem;
+  padding: 0.18rem 0.5rem; border-radius: 2px;
+  letter-spacing: 0.05em; border: 1px solid var(--border);
+  color: var(--grey3);
+}
+.pr-stars {
+  font-family: var(--f-mono); font-size: 0.65rem;
+  color: var(--grey4); letter-spacing: 0.05em;
+  display: flex; align-items: center; gap: 0.3rem;
+}
+
+/* ── Error state ── */
+.gh-error {
+  padding: 2rem 0; font-family: var(--f-mono);
+  font-size: 0.72rem; color: var(--grey4); letter-spacing: 0.08em;
+}
+
 /* ══════════════════════════════════════════
    EXPERIENCE
 ══════════════════════════════════════════ */

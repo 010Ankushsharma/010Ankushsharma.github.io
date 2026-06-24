@@ -229,7 +229,9 @@
     <div class="container">
       <div class="s-eyebrow" data-reveal><span>03</span> Projects</div>
       <h2 class="s-title" data-reveal>Selected <em>Work</em></h2>
-      <div class="proj-list">
+
+      <!-- Featured (hand-picked, always shown) -->
+      <div class="proj-list" id="featuredList">
 
         <article class="proj-row" data-reveal>
           <div class="pr-num">01</div>
@@ -307,6 +309,22 @@
         </article>
 
       </div>
+
+      <!-- GitHub repos divider -->
+      <div class="gh-divider" id="ghDivider">
+        <span class="gh-divider-label">More from GitHub</span>
+      </div>
+
+      <!-- GitHub repos — injected by JS -->
+      <div class="proj-list gh-proj-list" id="ghRepoList">
+        <div class="gh-loading" id="ghLoading">
+          <span class="gh-loading-dot"></span>
+          <span class="gh-loading-dot"></span>
+          <span class="gh-loading-dot"></span>
+          <p>Fetching repositories...</p>
+        </div>
+      </div>
+
       <div class="proj-footer" data-reveal>
         <a href="https://github.com/010Ankushsharma?tab=repositories" target="_blank" class="btn-ghost-full">
           All Repositories on GitHub ↗

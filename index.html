@@ -10,11 +10,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Grain overlay -->
   <div class="grain"></div>
-  <!-- Scroll progress -->
   <div class="scroll-bar" id="scrollBar"></div>
-  <!-- Cursor -->
   <div class="cursor" id="cursor"><div class="cursor-dot"></div></div>
 
   <!-- LOADER -->
@@ -31,13 +28,13 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-mark">AS<span class="nav-mark-dot">.</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#hero"         class="nl active">Home</a></li>
-        <li><a href="#about"        class="nl">About</a></li>
-        <li><a href="#skills"       class="nl">Skills</a></li>
-        <li><a href="#projects"     class="nl">Projects</a></li>
-        <li><a href="#experience"   class="nl">Experience</a></li>
-        <li><a href="#certs"        class="nl">Certs</a></li>
-        <li><a href="#contact"      class="nl">Contact</a></li>
+        <li><a href="#hero"       class="nl active">Home</a></li>
+        <li><a href="#about"      class="nl">About</a></li>
+        <li><a href="#skills"     class="nl">Skills</a></li>
+        <li><a href="#projects"   class="nl">Projects</a></li>
+        <li><a href="#experience" class="nl">Experience</a></li>
+        <li><a href="#certs"      class="nl">Certs</a></li>
+        <li><a href="#contact"    class="nl">Contact</a></li>
       </ul>
       <button class="burger" id="burger" aria-label="Menu">
         <span></span><span></span>
@@ -82,12 +79,12 @@
           <div class="photo-corner pc-tr"></div>
           <div class="photo-corner pc-bl"></div>
           <div class="photo-corner pc-br"></div>
-          <img src="assets/photo.jpg" alt="Ankush Sharma" class="hero-img">
+          <img src="assets/photo.jpeg" alt="Ankush Sharma" class="hero-img">
           <div class="photo-label">Ankush Sharma · 2025</div>
         </div>
         <div class="hero-stats-row">
           <div class="hs">
-            <span class="hs-n" data-count="50">0</span><span class="hs-p">+</span>
+            <span class="hs-n" data-count="15">0</span><span class="hs-p">+</span>
             <p>Projects</p>
           </div>
           <div class="hs-div"></div>
@@ -148,7 +145,7 @@
             <div class="ac-badge">● Open to Work</div>
           </div>
           <div class="aside-card">
-            <div class="ac-num" data-count="50">0</div><div class="ac-plus">+</div>
+            <div class="ac-num" data-count="15">0</div><div class="ac-plus">+</div>
             <div class="ac-label">Projects Shipped</div>
           </div>
           <div class="aside-card">
@@ -230,28 +227,26 @@
       <div class="s-eyebrow" data-reveal><span>03</span> Projects</div>
       <h2 class="s-title" data-reveal>Selected <em>Work</em></h2>
 
-      <!-- Featured (hand-picked, always shown) -->
-      <div class="proj-list" id="featuredList">
+      <!-- Category filter tabs -->
+      <div class="proj-tabs" data-reveal>
+        <button class="proj-tab active" data-cat="all">All <span class="tab-count">12</span></button>
+        <button class="proj-tab" data-cat="aiml">AI / ML <span class="tab-count">3</span></button>
+        <button class="proj-tab" data-cat="web">Web <span class="tab-count">3</span></button>
+        <button class="proj-tab" data-cat="mobile">Mobile <span class="tab-count">3</span></button>
+        <button class="proj-tab" data-cat="backend">Backend <span class="tab-count">3</span></button>
+      </div>
 
-        <article class="proj-row" data-reveal>
-          <div class="pr-num">01</div>
-          <div class="pr-info">
-            <h3>Reading Hub</h3>
-            <p>Web platform for exploring, managing, and reading books online with an interactive interface.</p>
-            <div class="pr-tags"><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
-          </div>
-          <div class="pr-links">
-            <a href="https://reading-hub.onrender.com/" target="_blank" class="pr-btn">Live ↗</a>
-            <a href="https://github.com/010Ankushsharma/Reading-HUb" target="_blank" class="pr-btn-ghost">GitHub</a>
-          </div>
-        </article>
+      <div class="proj-list" id="projList">
 
-        <article class="proj-row" data-reveal>
-          <div class="pr-num">02</div>
+        <!-- ══ AI / ML ══ -->
+        <article class="proj-row" data-cat="aiml" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge aiml">AI / ML</span>
+          </div>
           <div class="pr-info">
             <h3>AutoIntel</h3>
-            <p>AI-powered web app predicting used car prices instantly using machine learning and real vehicle data.</p>
-            <div class="pr-tags"><span>Python</span><span>Flask</span><span>ML</span></div>
+            <p>ML-powered used car price predictor. Trained a Scikit-learn regression model on real vehicle data, served via Flask REST API — live on Render.</p>
+            <div class="pr-tags"><span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Pandas</span></div>
           </div>
           <div class="pr-links">
             <a href="https://autointel.onrender.com" target="_blank" class="pr-btn">Live ↗</a>
@@ -259,24 +254,58 @@
           </div>
         </article>
 
-        <article class="proj-row" data-reveal>
-          <div class="pr-num">03</div>
+        <article class="proj-row" data-cat="aiml" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge aiml">AI / ML</span>
+          </div>
           <div class="pr-info">
             <h3>Kavach</h3>
-            <p>Flutter app helping farmers identify crop diseases through AI-powered image analysis.</p>
-            <div class="pr-tags"><span>Flutter</span><span>Dart</span><span>ML</span></div>
+            <p>Crop disease detection app for farmers — point at a leaf, get an AI diagnosis. CNN model compressed with TensorFlow Lite and deployed inside Flutter.</p>
+            <div class="pr-tags"><span>TensorFlow Lite</span><span>CNN</span><span>Flutter</span><span>Dart</span></div>
           </div>
           <div class="pr-links">
             <a href="https://github.com/010Ankushsharma/kavach_v1" target="_blank" class="pr-btn">GitHub ↗</a>
           </div>
         </article>
 
-        <article class="proj-row" data-reveal>
-          <div class="pr-num">04</div>
+        <article class="proj-row" data-cat="aiml" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge aiml">AI / ML</span>
+          </div>
+          <div class="pr-info">
+            <h3>IIT Ropar — ML Research Projects</h3>
+            <p>6-month intensive at IIT Ropar: end-to-end EDA pipelines, classification & regression models, feature engineering and cross-validation on real-world datasets.</p>
+            <div class="pr-tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>Matplotlib</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://github.com/010Ankushsharma" target="_blank" class="pr-btn">GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- ══ WEB ══ -->
+        <article class="proj-row" data-cat="web" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge web">Web</span>
+          </div>
+          <div class="pr-info">
+            <h3>Reading Hub</h3>
+            <p>Full-stack book platform with user auth, search, and a clean reading UI. Node.js + Express + MongoDB, deployed live on Render.</p>
+            <div class="pr-tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>EJS</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://reading-hub.onrender.com/" target="_blank" class="pr-btn">Live ↗</a>
+            <a href="https://github.com/010Ankushsharma/Reading-HUb" target="_blank" class="pr-btn-ghost">GitHub</a>
+          </div>
+        </article>
+
+        <article class="proj-row" data-cat="web" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge web">Web</span>
+          </div>
           <div class="pr-info">
             <h3>Cafe-e</h3>
-            <p>Coffee-shop themed web app with menu browsing and ordering features.</p>
-            <div class="pr-tags"><span>Flask</span><span>Python</span></div>
+            <p>Coffee-shop web app with full menu, cart, and ordering flow. Flask + Jinja2 backend with a responsive UI — live on Render.</p>
+            <div class="pr-tags"><span>Flask</span><span>Python</span><span>Jinja2</span><span>HTML/CSS</span></div>
           </div>
           <div class="pr-links">
             <a href="https://cafe-e-4.onrender.com/" target="_blank" class="pr-btn">Live ↗</a>
@@ -284,45 +313,107 @@
           </div>
         </article>
 
-        <article class="proj-row" data-reveal>
-          <div class="pr-num">05</div>
+        <article class="proj-row" data-cat="web" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge web">Web</span>
+          </div>
           <div class="pr-info">
-            <h3>JobSearch API</h3>
-            <p>RESTful job search API for posting, filtering, and retrieving listings with clean Spring Boot architecture.</p>
-            <div class="pr-tags"><span>Spring Boot</span><span>Java</span><span>REST API</span></div>
+            <h3>Portfolio v3</h3>
+            <p>This site — editorial dark design, scroll-triggered animations, live GitHub API integration. Zero frameworks, zero dependencies. Pure HTML, CSS, JS.</p>
+            <div class="pr-tags"><span>HTML</span><span>CSS</span><span>Vanilla JS</span><span>GitHub API</span></div>
           </div>
           <div class="pr-links">
-            <a href="https://github.com/010Ankushsharma/jobSerach" target="_blank" class="pr-btn">GitHub ↗</a>
+            <a href="https://github.com/010Ankushsharma" target="_blank" class="pr-btn">GitHub ↗</a>
           </div>
         </article>
 
-        <article class="proj-row" data-reveal>
-          <div class="pr-num">06</div>
+        <!-- ══ MOBILE ══ -->
+        <article class="proj-row" data-cat="mobile" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge mobile">Mobile</span>
+          </div>
           <div class="pr-info">
             <h3>Our Little Space</h3>
-            <p>Space-themed Flutter app with rich animations and engaging informational sections.</p>
-            <div class="pr-tags"><span>Flutter</span><span>Dart</span><span>Animations</span></div>
+            <p>Space exploration Flutter app with page-transition animations, parallax effects, and interactive planetary sections — polished, smooth UX.</p>
+            <div class="pr-tags"><span>Flutter</span><span>Dart</span><span>Animations</span><span>UI/UX</span></div>
           </div>
           <div class="pr-links">
             <a href="https://github.com/010Ankushsharma/our_little_space_v1" target="_blank" class="pr-btn">GitHub ↗</a>
           </div>
         </article>
 
-      </div>
+        <article class="proj-row" data-cat="mobile" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge mobile">Mobile</span>
+          </div>
+          <div class="pr-info">
+            <h3>Kavach — Mobile Client</h3>
+            <p>The Flutter front-end for Kavach: camera API integration, real-time inference feedback, and offline-first design for low-connectivity rural use.</p>
+            <div class="pr-tags"><span>Flutter</span><span>Dart</span><span>Camera API</span><span>ML Kit</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://github.com/010Ankushsharma/kavach_v1" target="_blank" class="pr-btn">GitHub ↗</a>
+          </div>
+        </article>
 
-      <!-- GitHub repos divider -->
-      <div class="gh-divider" id="ghDivider">
-        <span class="gh-divider-label">More from GitHub</span>
-      </div>
+        <article class="proj-row" data-cat="mobile" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge mobile">Mobile</span>
+          </div>
+          <div class="pr-info">
+            <h3>Facebook UI Replica</h3>
+            <p>Pixel-faithful Flutter clone of the Facebook mobile interface, built during the ThinkNext internship to master widget trees and state management.</p>
+            <div class="pr-tags"><span>Flutter</span><span>Dart</span><span>State Management</span><span>UI/UX</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://github.com/010Ankushsharma" target="_blank" class="pr-btn">GitHub ↗</a>
+          </div>
+        </article>
 
-      <!-- GitHub repos — injected by JS -->
-      <div class="proj-list gh-proj-list" id="ghRepoList">
-        <div class="gh-loading" id="ghLoading">
-          <span class="gh-loading-dot"></span>
-          <span class="gh-loading-dot"></span>
-          <span class="gh-loading-dot"></span>
-          <p>Fetching repositories...</p>
-        </div>
+        <!-- ══ BACKEND ══ -->
+        <article class="proj-row" data-cat="backend" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge backend">Backend</span>
+          </div>
+          <div class="pr-info">
+            <h3>JobSearch API</h3>
+            <p>Production-grade RESTful API for job listings — post, filter, search, paginate. Spring Boot MVC with JPA and MySQL. Clean layered architecture.</p>
+            <div class="pr-tags"><span>Spring Boot</span><span>Java</span><span>JPA</span><span>MySQL</span><span>REST</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://github.com/010Ankushsharma/jobSerach" target="_blank" class="pr-btn">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-row" data-cat="backend" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge backend">Backend</span>
+          </div>
+          <div class="pr-info">
+            <h3>Reading Hub — API Layer</h3>
+            <p>The Express.js backend powering Reading Hub: RESTful routes, MongoDB Atlas, JWT auth middleware, and clean MVC separation.</p>
+            <div class="pr-tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://github.com/010Ankushsharma/Reading-HUb" target="_blank" class="pr-btn">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-row" data-cat="backend" data-reveal>
+          <div class="pr-meta">
+            <span class="pr-cat-badge backend">Backend</span>
+          </div>
+          <div class="pr-info">
+            <h3>AutoIntel — ML API</h3>
+            <p>The Flask REST backend powering AutoIntel: model serialisation with Pickle, input validation, prediction endpoints, and CORS-ready JSON responses.</p>
+            <div class="pr-tags"><span>Flask</span><span>Python</span><span>Pickle</span><span>REST API</span></div>
+          </div>
+          <div class="pr-links">
+            <a href="https://autointel.onrender.com" target="_blank" class="pr-btn">Live ↗</a>
+            <a href="https://github.com/010Ankushsharma/AutoIntel" target="_blank" class="pr-btn-ghost">GitHub</a>
+          </div>
+        </article>
+
       </div>
 
       <div class="proj-footer" data-reveal>
@@ -348,7 +439,7 @@
             <ul>
               <li>Designed interactive mobile UIs including a Facebook interface replica</li>
               <li>Applied Dart fundamentals, widget lifecycle, and state management</li>
-              <li>Collaborated on debugging and performance optimization</li>
+              <li>Collaborated on debugging and performance optimisation</li>
             </ul>
             <div class="ec-tags"><span>Flutter</span><span>Dart</span><span>UI/UX</span></div>
           </div>
@@ -362,7 +453,7 @@
             <ul>
               <li>Intensive training in Artificial Intelligence & Data Science</li>
               <li>Applied ML algorithms to real-world classification and prediction datasets</li>
-              <li>EDA, feature engineering, and model optimization with Python</li>
+              <li>EDA, feature engineering, and model optimisation with Python</li>
             </ul>
             <div class="ec-tags"><span>Python</span><span>ML</span><span>Pandas</span></div>
           </div>
